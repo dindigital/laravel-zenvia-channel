@@ -77,10 +77,6 @@ class Zenvia
             throw CouldNotSendNotification::senhaNotProvided();
         }
 
-        if(empty($this->aggregateId)){
-            throw CouldNotSendNotification::aggregateIdNotProvided();
-        }
-
         try {
             $data = [
                 'sendSmsRequest' => [
