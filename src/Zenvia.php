@@ -69,12 +69,14 @@ class Zenvia
             throw CouldNotSendNotification::receiverNotProvided();
         }
 
-        if (empty($this->conta)) {
-            throw CouldNotSendNotification::contaNotProvided();
-        }
+        if (!$this->pretend) {
+            if (empty($this->conta)) {
+                throw CouldNotSendNotification::contaNotProvided();
+            }
 
-        if (empty($this->senha)) {
-            throw CouldNotSendNotification::senhaNotProvided();
+            if (empty($this->senha)) {
+                throw CouldNotSendNotification::senhaNotProvided();
+            }
         }
 
         try {
